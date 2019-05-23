@@ -1,0 +1,13 @@
+defaults: &defaults
+ adapter: postgresql
+ encoding: unicode
+ reconnect: true
+ pool: 8
+
+development:
+ host: <%= ENV['DBDEV_HOSTNAME'] %>
+ port: <%= ENV['DBDEV_PORT'] %>
+ database: <%= ENV['DBDEV_DATABASE'] %>
+ username: <%= ENV['DBDEV_USERNAME'] %>
+ password: <%= ENV['DBDEV_PASSWORD'] %>
+ <<: *defaults
